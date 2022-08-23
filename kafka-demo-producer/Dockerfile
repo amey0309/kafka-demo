@@ -2,6 +2,7 @@
 # Build stage
 #
 FROM registry.access.redhat.com/ubi8/openjdk-11:1.14-3 AS build
+USER root
 COPY src /home/app/src
 COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package 
